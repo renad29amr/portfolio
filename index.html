@@ -42,13 +42,40 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        .shape-1 { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
-        .shape-2 { width: 60px; height: 60px; top: 60%; right: 15%; animation-delay: 2s; }
-        .shape-3 { width: 100px; height: 100px; bottom: 20%; left: 20%; animation-delay: 4s; }
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
         }
 
         /* Navbar Enhancements */
@@ -59,7 +86,7 @@
         }
 
         .navbar.scrolled {
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-link {
@@ -111,8 +138,8 @@
         }
 
         .chip {
-            border: 1px solid rgba(255,255,255,0.3);
-            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             color: white;
             border-radius: 999px;
@@ -124,9 +151,9 @@
         }
 
         .chip:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Typing Animation */
@@ -138,13 +165,25 @@
         }
 
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: white; }
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white;
+            }
         }
 
         /* Card Animations */
@@ -155,7 +194,7 @@
 
         .card-hover:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .shadow-soft {
@@ -194,7 +233,7 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: all 0.5s ease;
@@ -240,19 +279,19 @@
         }
 
         .form-control {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
         }
 
         .form-control::placeholder {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .form-control:focus {
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.5);
-            box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.25);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
             color: white;
         }
 
@@ -293,8 +332,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Fade in animations */
@@ -325,7 +369,7 @@
 
         .social-icons a:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         a {
@@ -361,12 +405,18 @@
             </button>
             <div id="nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user me-1"></i>About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fas fa-cogs me-1"></i>Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education"><i class="fas fa-graduation-cap me-1"></i>Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certs"><i class="fas fa-certificate me-1"></i>Certificates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fas fa-cogs me-1"></i>Skills</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i
+                                class="fas fa-project-diagram me-1"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education"><i
+                                class="fas fa-graduation-cap me-1"></i>Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certs"><i
+                                class="fas fa-certificate me-1"></i>Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i
+                                class="fas fa-envelope me-1"></i>Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -378,7 +428,8 @@
             <div class="row align-items-center g-4">
                 <div class="col-md-7">
                     <h1 class="display-5 fw-bold typing-text" id="typingText"></h1>
-                    <p class="lead mb-4 fade-in">Building data pipelines, teaching IoT, and turning ideas into working systems.</p>
+                    <p class="lead mb-4 fade-in">Building data pipelines, teaching IoT, and turning ideas into working
+                        systems.</p>
                     <div class="d-flex gap-2 fade-in">
                         <a href="#projects" class="btn btn-primary btn-lg">
                             <i class="fas fa-eye me-2"></i>View Projects
@@ -392,8 +443,8 @@
                     </div>
                 </div>
                 <div class="col-md-5 text-center">
-                    <img src="images/profile.jpg" alt="Renad Amr" class="img-fluid rounded-circle shadow-soft profile-img"
-                        width="250" height="250">
+                    <img src="images/profile.jpg" alt="Renad Amr"
+                        class="img-fluid rounded-circle shadow-soft profile-img" width="250" height="250">
                 </div>
             </div>
         </div>
@@ -408,7 +459,8 @@
             <div class="p-4 border rounded-4 shadow-soft card-hover">
                 <p>
                     Dynamic Data Engineer trainee at the Digital Egypt Pioneers Initiative (DEPI), skilled in Python and
-                    data pipeline design. I create automated data processes, work with SQL data warehouses, and teach IoT
+                    data pipeline design. I create automated data processes, work with SQL data warehouses, and teach
+                    IoT
                     concepts through tutorials and student support. Strong critical thinking, teamwork, and hands-on
                     experience across robotics and embedded systems.
                 </p>
@@ -520,18 +572,19 @@
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                             </iframe>
                         </div>
-                        <h5><i class="fas fa-gamepad me-2"></i>Icy Tower — C++/SFML <small class="text-muted">Mar–Jun 2025</small></h5>
+                        <h5><i class="fas fa-gamepad me-2"></i>Icy Tower — C++/SFML <small class="text-muted">Mar–Jun
+                                2025</small></h5>
                         <p>Fast-paced platformer with dynamic levels, moving platforms, randomized blocks,
                             wall-jumps, power-ups, persistent high scores, and polished audio-visuals.</p>
-                        <a class="btn btn-sm btn-primary" href="https://github.com/renad29amr/ICYTOWER_SP" target="_blank">
+                        <a class="btn btn-sm btn-primary" href="https://github.com/renad29amr/ICYTOWER_SP"
+                            target="_blank">
                             <i class="fab fa-github me-1"></i>View on GitHub
                         </a>
-                        <div class="project-overlay">
+                        <!-- <div class="project-overlay">
                             <div class="text-center">
                                 <i class="fas fa-eye fa-2x mb-2"></i>
-                                <p>Click to view details</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -540,15 +593,15 @@
                     <div class="p-4 border rounded-4 h-100 shadow-soft card-hover project-card">
                         <img src="images/vending.png" alt="Vending Machine Arduino Project"
                             class="img-fluid rounded mb-3">
-                        <h5><i class="fas fa-microchip me-2"></i>Vending Machine — Arduino C/C++ <small class="text-muted">May–Jun 2025</small></h5>
+                        <h5><i class="fas fa-microchip me-2"></i>Vending Machine — Arduino C/C++ <small
+                                class="text-muted">May–Jun 2025</small></h5>
                         <p>Physical Arduino build with item selection, coin validation, LCD feedback, and
                             servo-controlled dispensing.</p>
-                        <div class="project-overlay">
+                        <!-- <div class="project-overlay">
                             <div class="text-center">
                                 <i class="fas fa-cog fa-2x mb-2"></i>
-                                <p>IoT Hardware Project</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -557,18 +610,19 @@
                     <div class="p-4 border rounded-4 h-100 shadow-soft card-hover project-card">
                         <img src="images/welcome.png" alt="Food Recipe Website Screenshot"
                             class="img-fluid rounded mb-3">
-                        <h5><i class="fas fa-utensils me-2"></i>Food Recipe Website — HTML/CSS/JavaScript <small class="text-muted">2025</small></h5>
+                        <h5><i class="fas fa-utensils me-2"></i>Food Recipe Website — HTML/CSS/JavaScript <small
+                                class="text-muted">2025</small></h5>
                         <p>A responsive website for browsing and managing food recipes, designed with HTML, CSS, and
                             JavaScript. Features recipe categories, ingredient lists, and an interactive UI.</p>
-                        <a class="btn btn-sm btn-primary" href="https://github.com/renad29amr/Web_Project" target="_blank">
+                        <a class="btn btn-sm btn-primary" href="https://github.com/renad29amr/Web_Project"
+                            target="_blank">
                             <i class="fab fa-github me-1"></i>View on GitHub
                         </a>
-                        <div class="project-overlay">
+                        <!-- <div class="project-overlay">
                             <div class="text-center">
                                 <i class="fas fa-globe fa-2x mb-2"></i>
-                                <p>Web Development</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -578,7 +632,8 @@
         <section id="education" class="mb-5 fade-in">
             <h2 class="fw-bold mb-3"><i class="fas fa-graduation-cap text-primary me-2"></i>Education</h2>
             <div class="p-4 border rounded-4 shadow-soft card-hover">
-                <h5 class="mb-1"><i class="fas fa-university me-2"></i>Ain Shams University — B.Sc. Computer Science</h5>
+                <h5 class="mb-1"><i class="fas fa-university me-2"></i>Ain Shams University — B.Sc. Computer Science
+                </h5>
                 <p class="mb-1"><strong>GPA:</strong> 3.604</p>
                 <p class="text-muted mb-0"><i class="fas fa-calendar me-1"></i>Oct 2025 – Oct 2028</p>
             </div>
@@ -619,22 +674,25 @@
                 <div class="col-md-6">
                     <div class="p-4 border rounded-4 shadow-soft card-hover">
                         <h5 class="mb-3"><i class="fas fa-address-card me-2"></i>Contact Information</h5>
-                        <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i><strong>Email:</strong> 
+                        <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i><strong>Email:</strong>
                             <a href="mailto:renadamr.bls@gmail.com">renadamr.bls@gmail.com</a>
                         </p>
-                        <p class="mb-2"><i class="fab fa-linkedin me-2 text-primary"></i><strong>LinkedIn:</strong> 
+                        <p class="mb-2"><i class="fab fa-linkedin me-2 text-primary"></i><strong>LinkedIn:</strong>
                             <a href="https://linkedin.com/in/renad-amr" target="_blank">linkedin.com/in/renad-amr</a>
                         </p>
-                        <p class="mb-2"><i class="fab fa-github me-2 text-primary"></i><strong>GitHub:</strong> 
+                        <p class="mb-2"><i class="fab fa-github me-2 text-primary"></i><strong>GitHub:</strong>
                             <a href="https://github.com/renad29amr" target="_blank">github.com/renad29amr</a>
                         </p>
-                        <p class="mb-3"><i class="fas fa-map-marker-alt me-2 text-primary"></i><strong>Location:</strong> 
-                            Cairo, Egypt · <i class="fas fa-phone me-1 text-primary"></i><strong>Phone:</strong> 01093738073
+                        <p class="mb-3"><i
+                                class="fas fa-map-marker-alt me-2 text-primary"></i><strong>Location:</strong>
+                            Cairo, Egypt · <i class="fas fa-phone me-1 text-primary"></i><strong>Phone:</strong>
+                            01093738073
                         </p>
-                        
+
                         <div class="social-icons text-center">
                             <a href="mailto:renadamr.bls@gmail.com"><i class="fas fa-envelope"></i></a>
-                            <a href="https://linkedin.com/in/renad-amr" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://linkedin.com/in/renad-amr" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
                             <a href="https://github.com/renad29amr" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
@@ -666,7 +724,8 @@
     <!-- Footer -->
     <footer class="py-4 bg-light border-top">
         <div class="container text-center small">
-            © <span id="y"></span> Renad Amr — Portfolio | Made with <i class="fas fa-heart text-danger"></i> and lots of <i class="fas fa-coffee text-warning"></i>
+            © <span id="y"></span> Renad Amr — Portfolio | Made with <i class="fas fa-heart text-danger"></i> and lots
+            of <i class="fas fa-coffee text-warning"></i>
         </div>
     </footer>
 
@@ -688,7 +747,7 @@
         // Typing animation
         const texts = [
             "Data Engineer Trainee",
-            "IoT Educator", 
+            "IoT Educator",
             "Problem Solver",
             "Tech Enthusiast"
         ];
@@ -815,15 +874,15 @@
         });
 
         // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Show success message
             const button = this.querySelector('button');
             const originalText = button.innerHTML;
             button.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
             button.style.background = '#28a745';
-            
+
             setTimeout(() => {
                 button.innerHTML = originalText;
                 button.style.background = '';
@@ -843,9 +902,9 @@
             particle.style.top = '100%';
             particle.style.pointerEvents = 'none';
             particle.style.animation = `float-up ${3 + Math.random() * 2}s linear forwards`;
-            
+
             document.querySelector('.hero').appendChild(particle);
-            
+
             setTimeout(() => {
                 particle.remove();
             }, 5000);
@@ -868,24 +927,24 @@
 
         // Add interactive hover effects to project cards
         document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) rotateX(5deg)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) rotateX(0deg)';
             });
         });
 
         // Add click effect to buttons
         document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-                
+
                 ripple.style.width = ripple.style.height = size + 'px';
                 ripple.style.left = x + 'px';
                 ripple.style.top = y + 'px';
@@ -895,11 +954,11 @@
                 ripple.style.transform = 'scale(0)';
                 ripple.style.animation = 'ripple 0.6s linear';
                 ripple.style.pointerEvents = 'none';
-                
+
                 this.style.position = 'relative';
                 this.style.overflow = 'hidden';
                 this.appendChild(ripple);
-                
+
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
@@ -932,7 +991,7 @@
         });
 
         // Add easter egg - profile image click
-        document.querySelector('.profile-img').addEventListener('click', function() {
+        document.querySelector('.profile-img').addEventListener('click', function () {
             this.style.animation = 'bounce 0.5s ease';
             setTimeout(() => {
                 this.style.animation = '';
@@ -973,11 +1032,11 @@
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const scrollPercent = scrollTop / (document.documentElement.scrollHeight - window.innerHeight);
-            
+
             // Change body background color subtly based on scroll
             const hue = 200 + (scrollPercent * 60); // From blue to purple
             document.body.style.background = `linear-gradient(to bottom, hsl(${hue}, 20%, 98%), hsl(${hue}, 30%, 96%))`;
-            
+
             lastScrollTop = scrollTop;
         }, false);
 
