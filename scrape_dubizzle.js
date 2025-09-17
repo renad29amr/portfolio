@@ -38,8 +38,12 @@ async function clickRevealPhoneIfPresent(page) {
   const candidates = [
     "button[aria-label*='phone']",
     "button:has-text('Show Phone')",
+    "button:has-text('Show Number')",
+    "button:has-text('Call')",
     "button:has-text('رقم الهاتف')",
     "button:has-text('عرض الهاتف')",
+    "button:has-text('اتصال')",
+    "button:has-text('إظهار')",
     "._06ac9027 button",
   ];
   for (const sel of candidates) {
@@ -56,7 +60,7 @@ async function clickRevealPhoneIfPresent(page) {
   }
   // Try click by text within the page
   try {
-    const el = await page.getByText(/(Show Phone|رقم الهاتف|عرض الهاتف)/).first();
+    const el = await page.getByText(/(Show Phone|Show Number|Call|رقم الهاتف|عرض الهاتف|اتصال|إظهار)/).first();
     if (await el.isVisible()) {
       await el.click({ timeout: 2000 });
       await delay(500);
@@ -74,19 +78,22 @@ async function extractAdDetails(page, adUrl) {
   await clickRevealPhoneIfPresent(page);
 
   // Pull JSON from hydrated state if present; fallback to DOM scraping
-  const hydrated = await page.evaluate(() => {
+  const { hydrated, ldjson } = await page.evaluate(() => {
     try {
       const html = document.documentElement.innerHTML;
       const marker = "window.webpackBundles";
       if (html.includes(marker)) {
         // There is JSON in the page before this marker; extract the trailing assignment that contains ad data
         const match = html.match(/\{"adOfTheDay\":[\s\S]*?\};/);
-        if (match) {
-          return match[0];
-        }
+        // Not always present on detail pages
+        const hydrated = match ? match[0] : null;
+        // Collect JSON-LD blocks as well
+        const ld = Array.from(document.querySelectorAll("script[type='application/ld+json']")).map(s => s.textContent || "");
+        return { hydrated, ldjson: ld };
       }
     } catch (e) {}
-    return null;
+    const ld = Array.from(document.querySelectorAll("script[type='application/ld+json']")).map(s => s.textContent || "");
+    return { hydrated: null, ldjson: ld };
   });
 
   let name = "";
@@ -95,6 +102,7 @@ async function extractAdDetails(page, adUrl) {
   let location = "";
   let carType = "";
   let description = "";
+  let adTitle = "";
 
   if (hydrated) {
     // Best-effort parse: look for fields in JSON string without fully parsing huge object
@@ -113,28 +121,98 @@ async function extractAdDetails(page, adUrl) {
     carType = getVal(/"Body Type"[\s\S]*?"formattedValue_l1"\s*:\s*"([^"]+)"/);
   }
 
+  // Use JSON-LD if available
+  if ((!name || !price || !description || !carType || !location) && ldjson && ldjson.length) {
+    const objs = [];
+    for (const raw of ldjson) {
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) parsed.forEach(o => objs.push(o));
+        else objs.push(parsed);
+      } catch (_) {}
+    }
+    const find = (pred) => objs.find(pred) || {};
+    // Breadcrumbs can contain location
+    const breadcrumbs = objs.find(o => o && o['@type'] === 'BreadcrumbList');
+    if (breadcrumbs && !location) {
+      try {
+        const items = breadcrumbs.itemListElement || [];
+        const names = items.map(i => (i && (i.name || (i.item && i.item.name))) || "").filter(Boolean);
+        // take last 2 as city, province when available
+        if (names.length >= 2) {
+          location = names.slice(-2).join(", ");
+        } else if (names.length === 1) {
+          location = names[0];
+        }
+      } catch (_) {}
+    }
+    const vehicle = find(o => (o && (o['@type'] === 'Car' || o['@type'] === 'Vehicle' || o['@type'] === 'Product')));
+    if (vehicle && !adTitle) adTitle = vehicle.name || vehicle.model || "";
+    const offer = vehicle && vehicle.offers ? vehicle.offers : find(o => o && o['@type'] === 'Offer');
+    if (!name) {
+      let seller = vehicle?.seller || offer?.seller || find(o => o && o.seller)?.seller || find(o => o && o.provider)?.provider || {};
+      if (typeof seller === 'string') name = seller;
+      else name = seller?.name || name;
+    }
+    if (!price) {
+      price = offer?.price || vehicle?.price || "";
+      if (price && offer?.priceCurrency) price = `${price} ${offer.priceCurrency}`;
+    }
+    if (!description) description = vehicle?.description || find(o => o && o.description)?.description || "";
+    if (!carType) carType = vehicle?.bodyType || vehicle?.vehicleConfiguration || [vehicle?.brand?.name, vehicle?.model?.name].filter(Boolean).join(" ");
+    if (!location) {
+      const addr = vehicle?.address || offer?.availableAtOrFrom || find(o => o && o.address)?.address;
+      if (addr && typeof addr === 'object') {
+        const locParts = [addr.addressLocality, addr.addressRegion, addr.addressCountry].filter(Boolean);
+        location = locParts.join(", ");
+      }
+    }
+  }
+
+  // Meta tag fallbacks (title, price)
+  try {
+    const meta = await page.evaluate(() => {
+      const get = (sel, attr) => {
+        const el = document.querySelector(sel);
+        return el ? el.getAttribute(attr) || "" : "";
+      };
+      return {
+        ogTitle: get("meta[property='og:title']", "content"),
+        ogDesc: get("meta[property='og:description']", "content"),
+        productPrice: get("meta[property='product:price:amount']", "content"),
+        twitterPrice: get("meta[name='twitter:data1']", "content"),
+      };
+    });
+    if (!adTitle && meta.ogTitle) adTitle = meta.ogTitle;
+    if (!description && meta.ogDesc) description = meta.ogDesc;
+    if (!price) {
+      if (meta.productPrice) price = meta.productPrice;
+      else if (meta.twitterPrice) price = meta.twitterPrice;
+    }
+  } catch (_) {}
+
   // Fallbacks via DOM
   if (!name) {
     try {
-      const n = await page.locator("[data-testid='contact-name'], [class*='contact'] h3, [class*='contact'] .name").first().textContent({ timeout: 1000 });
+      const n = await page.locator("[data-testid='contact-name'], [class*='contact'] h3, [class*='contact'] .name, [class*='Seller'] h3").first().textContent({ timeout: 1500 });
       name = (n || "").trim();
     } catch (_) {}
   }
   if (!price) {
     try {
-      const p = await page.locator("[data-testid='price'], [class*='price']").first().textContent({ timeout: 1000 });
+      const p = await page.locator("[data-testid='price'], [class*='price'], [itemprop='price']").first().textContent({ timeout: 1500 });
       price = (p || "").replace(/\s+/g, " ").trim();
     } catch (_) {}
   }
   if (!location) {
     try {
-      const l = await page.locator("[data-testid='location'], [class*='location']").first().textContent({ timeout: 1000 });
+      const l = await page.locator("[data-testid='location'], [class*='location'], [itemprop='address']").first().textContent({ timeout: 1500 });
       location = (l || "").replace(/\s+/g, " ").trim();
     } catch (_) {}
   }
   if (!description) {
     try {
-      const d = await page.locator("[data-testid='description'], [class*='description']").first().textContent({ timeout: 1000 });
+      const d = await page.locator("[data-testid='description'], [class*='description'], meta[name='description']").first().textContent({ timeout: 1500 }).catch(async () => (await page.locator("meta[name='description']").first().getAttribute('content')));
       description = (d || "").replace(/\s+/g, " ").trim();
     } catch (_) {}
   }
@@ -147,25 +225,54 @@ async function extractAdDetails(page, adUrl) {
         carType = (val || "").trim();
       }
     } catch (_) {}
+    if (!carType) {
+      try {
+        const arSpec = await page.getByText(/نوع الهيكل|هيكل السيارة/).first();
+        if (await arSpec.count()) {
+          const row = await arSpec.locator("xpath=ancestor::*[contains(@class,'row') or contains(@class,'item')][1]");
+          const val = await row.locator("[class*='value']").first().textContent({ timeout: 1000 });
+          carType = (val || "").trim();
+        }
+      } catch (_) {}
+    }
+    if (!carType && adTitle) {
+      carType = adTitle;
+    }
   }
 
   // Phone: find visible numbers
   try {
     const phoneText = await page.evaluate(() => {
       const texts = [];
-      const phoneNodes = document.querySelectorAll("a[href^='tel:'], [href*='tel:'], [class*='phone'], [data-testid*='phone']");
+      const phoneNodes = document.querySelectorAll("a[href^='tel:'], [href*='tel:'], [class*='phone'], [data-testid*='phone'], a[href*='wa.me']");
       phoneNodes.forEach((n) => {
-        const t = n.textContent || n.getAttribute("href") || "";
+        let t = n.textContent || n.getAttribute("href") || "";
+        if (/wa\.me\//.test(t)) {
+          const m = t.match(/wa\.me\/(\d+)/);
+          if (m) t = `+${m[1]}`;
+        }
         if (t) texts.push(t);
       });
-      const textContent = document.body.innerText || "";
+      let textContent = document.body.innerText || "";
+      // Normalize Arabic-Indic digits to ASCII
+      const arabicToAscii = {
+        '٠':'0','١':'1','٢':'2','٣':'3','٤':'4','٥':'5','٦':'6','٧':'7','٨':'8','٩':'9'
+      };
+      textContent = textContent.replace(/[٠-٩]/g, d => arabicToAscii[d] || d);
       // Basic phone regex for Egypt numbers
-      const re = /(\+?20\s?1[0-9]{9}|01[0-9]{9})/g;
+      const re = /(\+?20\s?1[0-9]{9}|01[0-9]{9}|\+20\s?2\s?\d{8})/g;
       const matches = Array.from(textContent.matchAll(re)).map((m) => m[0]);
       return texts.concat(matches).join(" | ");
     });
     phone = (phoneText || "").split(" | ").filter(Boolean)[0] || "";
   } catch (_) {}
+
+  // Final fallbacks to prevent empty columns
+  if (!name) name = "-";
+  if (!price) price = "-";
+  if (!location) location = "-";
+  if (!carType) carType = adTitle || "-";
+  if (!description) description = "-";
 
   return {
     name,
