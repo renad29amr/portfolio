@@ -2,823 +2,880 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Renad Amr – Data Engineer & IoT Specialist</title>
-    <meta name="description"
-        content="Professional portfolio of Renad Amr – Data Engineer, IoT Educator, and Technology Innovator" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Renad Amr – Data Engineer & IoT Specialist</title>
+  <meta name="description"
+    content="Professional portfolio of Renad Amr – Data Engineer, IoT Educator, and Technology Innovator" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-            <div class="data-loader"></div>
-            <div class="loading-text">Loading Portfolio...</div>
-        </div>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="data-loader"></div>
+      <div class="loading-text">Loading Portfolio...</div>
     </div>
+  </div>
 
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="circuit-pattern" style="top: 10%; left: 5%;"></div>
-        <div class="circuit-pattern" style="top: 60%; right: 10%;"></div>
-        <div class="circuit-pattern" style="bottom: 20%; left: 15%;"></div>
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="circuit-pattern" style="top: 10%; left: 5%;"></div>
+    <div class="circuit-pattern" style="top: 60%; right: 10%;"></div>
+    <div class="circuit-pattern" style="bottom: 20%; left: 15%;"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <i class="fas fa-database me-2"></i>Renad.Amr
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="fas fa-database me-2"></i>Renad.Amr
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="typing-text" id="typingText"></span>
+              <span class="typing-cursor"></span>
+            </h1>
+            <p class="hero-subtitle fade-in">
+              Transforming raw data into actionable insights through intelligent pipeline architecture.
+              Building scalable IoT solutions and mentoring the next generation of technology innovators.
+              Currently advancing expertise as a Data Engineer trainee at DEPI.
+            </p>
+            <div class="cta-buttons fade-in">
+              <a href="#projects" class="btn-primary-custom">
+                <i class="fas fa-chart-line me-2"></i>View My Projects
+              </a>
+              <a href="#contact" class="btn-outline-custom">
+                <i class="fas fa-paper-plane me-2"></i>Let's Connect
+              </a>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <h1 class="hero-title">
-                            <span class="typing-text" id="typingText"></span>
-                            <span class="typing-cursor"></span>
-                        </h1>
-                        <p class="hero-subtitle fade-in">
-                            Transforming raw data into actionable insights through intelligent pipeline architecture.
-                            Building scalable IoT solutions and mentoring the next generation of technology innovators.
-                            Currently advancing expertise as a Data Engineer trainee at DEPI.
-                        </p>
-                        <div class="cta-buttons fade-in">
-                            <a href="#projects" class="btn-primary-custom">
-                                <i class="fas fa-chart-line me-2"></i>View My Projects
-                            </a>
-                            <a href="#contact" class="btn-outline-custom">
-                                <i class="fas fa-paper-plane me-2"></i>Let's Connect
-                            </a>
-                        </div>
-                        <div class="tech-stack fade-in">
-                            <div class="tech-badge">Python</div>
-                            <div class="tech-badge">C++</div>
-                            <div class="tech-badge">Java</div>
-                            <div class="tech-badge">SQL</div>
-                            <div class="tech-badge">IoT Systems</div>
-                            <div class="tech-badge">Data Visualization</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-center">
-                    <img src="images/profile.jpg" alt="Renad Amr - Data Engineer & IoT Specialist"
-                        class="profile-image scale-in">
-                </div>
+            <div class="tech-stack fade-in">
+              <div class="tech-badge">Python</div>
+              <div class="tech-badge">C++</div>
+              <div class="tech-badge">Java</div>
+              <div class="tech-badge">SQL</div>
+              <div class="tech-badge">IoT Systems</div>
+              <div class="tech-badge">Data Visualization</div>
             </div>
+          </div>
         </div>
-    </section>
+        <div class="col-lg-5 text-center">
+          <img src="images/profile.jpg" alt="Renad Amr - Data Engineer & IoT Specialist" class="profile-image scale-in">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="glass-card slide-in-left">
-                        <h3 class="text-gradient mb-4">
-                            <i class="fas fa-cogs data-flow-icon"></i>
-                            Data-Driven Problem Solver
-                        </h3>
-                        <p class="mb-4">
-                            As a passionate Data Engineer trainee at the Digital Egypt Pioneers Initiative (DEPI),
-                            I specialize in designing and implementing robust data pipeline architectures that transform
-                            complex datasets into meaningful business insights. My expertise spans from ETL processes
-                            to real-time data streaming solutions.
-                        </p>
-                        <p class="mb-4">
-                            What distinguishes my approach is the integration of IoT systems with advanced data
-                            engineering practices. I don't just process data—I understand its origin from sensors
-                            and embedded devices, ensuring end-to-end data integrity and optimal pipeline performance.
-                        </p>
-                        <p class="mb-0">
-                            My educational background combines rigorous computer science fundamentals with hands-on
-                            experience in modern data technologies, enabling me to tackle complex challenges with
-                            both theoretical knowledge and practical expertise.
-                        </p>
-                    </div>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">About Me</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="glass-card slide-in-left">
+            <h3 class="text-gradient mb-4">
+              <i class="fas fa-cogs data-flow-icon"></i>
+              Data-Driven Problem Solver
+            </h3>
+            <p class="mb-4">
+              As a passionate Data Engineer trainee at the Digital Egypt Pioneers Initiative (DEPI),
+              I specialize in designing and implementing robust data pipeline architectures that transform
+              complex datasets into meaningful business insights. My expertise spans from ETL processes
+              to real-time data streaming solutions.
+            </p>
+            <p class="mb-4">
+              What distinguishes my approach is the integration of IoT systems with advanced data
+              engineering practices. I don't just process data—I understand its origin from sensors
+              and embedded devices, ensuring end-to-end data integrity and optimal pipeline performance.
+            </p>
+            <p class="mb-0">
+              My educational background combines rigorous computer science fundamentals with hands-on
+              experience in modern data technologies, enabling me to tackle complex challenges with
+              both theoretical knowledge and practical expertise.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="glass-card slide-in-right">
+            <h4 class="mb-4">
+              <i class="fas fa-wifi iot-icon"></i>
+              Core Competencies
+            </h4>
+            <div class="row g-4">
+              <div class="col-6">
+                <div class="text-center">
+                  <i class="fas fa-database fa-2x text-gradient mb-3"></i>
+                  <h6>Data Engineering</h6>
+                  <small class="text-muted">Pipeline Design & ETL Processes</small>
                 </div>
-                <div class="col-lg-6">
-                    <div class="glass-card slide-in-right">
-                        <h4 class="mb-4">
-                            <i class="fas fa-wifi iot-icon"></i>
-                            Core Competencies
-                        </h4>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="text-center">
-                                    <i class="fas fa-database fa-2x text-gradient mb-3"></i>
-                                    <h6>Data Engineering</h6>
-                                    <small class="text-muted">Pipeline Design & ETL Processes</small>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="text-center">
-                                    <i class="fas fa-microchip fa-2x text-gradient-iot mb-3"></i>
-                                    <h6>IoT Integration</h6>
-                                    <small class="text-muted">Sensor Data & Edge Computing</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
-                            <h6 class="mb-3">Professional Philosophy</h6>
-                            <blockquote class="border-start border-primary ps-3 fst-italic">
-                                "Data is the new oil, but unlike oil, data becomes more valuable when shared and
-                                processed intelligently.
-                                My mission is to build the infrastructure that transforms raw information into strategic
-                                advantages."
-                            </blockquote>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center">
+                  <i class="fas fa-microchip fa-2x text-gradient-iot mb-3"></i>
+                  <h6>IoT Integration</h6>
+                  <small class="text-muted">Sensor Data & Edge Computing</small>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">
-                <i class="fas fa-graduation-cap analytics-icon"></i>
-                Education
-            </h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="glass-card fade-in">
-                        <div class="d-flex justify-content-between align-items-start mb-4">
-                            <div>
-                                <h4 class="mb-2">Bachelor of Computer Science</h4>
-                                <p class="text-gradient mb-0 fw-bold fs-5">Ain Shams University</p>
-                                <p class="text-muted mb-0">Faculty of Computer and Information Sciences</p>
-                            </div>
-                            <div class="text-end">
-                                <span class="badge bg-gradient-accent px-3 py-2 fs-6">2024 - 2028</span>
-                                <br>
-                                <span class="badge bg-gradient-primary px-3 py-2 mt-2">GPA: 3.604/4.0</span>
-                            </div>
-                        </div>
-
-                        <p class="mb-4">
-                            Pursuing comprehensive computer science education with specialization in software
-                            engineering,
-                            data structures, algorithms, and database systems. Maintaining excellent academic
-                            performance
-                            while actively engaging in practical projects and research.
-                        </p>
-                    </div>
-                </div>
+            <div class="mt-4">
+              <h6 class="mb-3">Professional Philosophy</h6>
+              <blockquote class="border-start border-primary ps-3 fst-italic">
+                "Data is the new oil, but unlike oil, data becomes more valuable when shared and
+                processed intelligently.
+                My mission is to build the infrastructure that transforms raw information into strategic
+                advantages."
+              </blockquote>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
-        <div class="container">
-            <h2 class="section-title fade-in">
-                <i class="fas fa-tools analytics-icon"></i>
-                Technical Expertise
-            </h2>
-
-            <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-
-                    <!-- Data Engineering -->
-                    <div class="carousel-item active">
-                        <div class="skill-category fade-in">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-database data-flow-icon"></i>
-                                <h4 class="mb-0">Data Engineering</h4>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Python (Pandas, NumPy)</span>
-                                    <span class="skill-level">Expert • 95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>SQL & Database Design</span>
-                                    <span class="skill-level">Advanced • 90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>ETL/ELT Pipeline Development</span>
-                                    <span class="skill-level">Advanced • 88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Apache Spark & Big Data</span>
-                                    <span class="skill-level">Proficient • 75%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- IoT -->
-                    <div class="carousel-item">
-                        <div class="skill-category fade-in">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-microchip iot-icon"></i>
-                                <h4 class="mb-0">IoT & Hardware</h4>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Arduino & Raspberry Pi</span>
-                                    <span class="skill-level">Expert • 92%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="92"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>C/C++ for Embedded Systems</span>
-                                    <span class="skill-level">Advanced • 88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>Sensor Integration & Protocols</span>
-                                    <span class="skill-level">Advanced • 85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">
-                                    <span>MQTT & IoT Communication</span>
-                                    <span class="skill-level">Proficient • 80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Core Technical Skills -->
-                    <div class="carousel-item">
-                        <div class="skill-category fade-in">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-laptop-code code-icon"></i>
-                                <h4 class="mb-0">Core Technical Skills</h4>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-check-circle text-success me-2"></i>C++, Python, Java</li>
-                                <li><i class="fas fa-check-circle text-success me-2"></i>Object-Oriented Programming
-                                    (OOP)</li>
-                                <li><i class="fas fa-check-circle text-success me-2"></i>SFML (Game Development)</li>
-                                <li><i class="fas fa-check-circle text-success me-2"></i>Embedded C & Microcontrollers
-                                </li>
-                                <li><i class="fas fa-check-circle text-success me-2"></i>Big Data Analytics</li>
-                                <li><i class="fas fa-check-circle text-success me-2"></i>SQL & Databases</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Soft Skills -->
-                    <div class="carousel-item">
-                        <div class="skill-category fade-in">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-users analytics-icon"></i>
-                                <h4 class="mb-0">Soft Skills</h4>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-auto"><span class="badge bg-gradient-primary">Problem Solving</span>
-                                </div>
-                                <div class="col-auto"><span class="badge bg-gradient-primary">Critical Thinking</span>
-                                </div>
-                                <div class="col-auto"><span class="badge bg-gradient-primary">Team Leadership</span>
-                                </div>
-                                <div class="col-auto"><span class="badge bg-gradient-primary">Creativity</span></div>
-                                <div class="col-auto"><span class="badge bg-gradient-primary">Effective
-                                        Communication</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-
-                <!-- Indicators -->
-                <div class="carousel-indicators mt-5">
-                    <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="3"></button>
-                </div>
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">
+        <i class="fas fa-graduation-cap analytics-icon"></i>
+        Education
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="glass-card fade-in">
+            <div class="d-flex justify-content-between align-items-start mb-4">
+              <div>
+                <h4 class="mb-2">Bachelor of Computer Science</h4>
+                <p class="text-gradient mb-0 fw-bold fs-5">Ain Shams University</p>
+                <p class="text-muted mb-0">Faculty of Computer and Information Sciences</p>
+              </div>
+              <div class="text-end">
+                <span class="badge bg-gradient-accent px-3 py-2 fs-6">2024 - 2028</span>
+                <br>
+                <span class="badge bg-gradient-primary px-3 py-2 mt-2">GPA: 3.604/4.0</span>
+              </div>
             </div>
+
+            <p class="mb-4">
+              Pursuing comprehensive computer science education with specialization in software
+              engineering,
+              data structures, algorithms, and database systems. Maintaining excellent academic
+              performance
+              while actively engaging in practical projects and research.
+            </p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+  <!-- Skills Section -->
+  <section id="skills" class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div class="container">
+      <h2 class="section-title fade-in">
+        <i class="fas fa-tools analytics-icon"></i>
+        Technical Expertise
+      </h2>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">
-                <i class="fas fa-project-diagram analytics-icon"></i>
-                Featured Projects
-            </h2>
-            <div class="projects-grid">
-                <!-- Icy Tower Game Project -->
-                <div class="project-card fade-in">
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.facebook.com/plugins/video.php?height=200&href=https%3A%2F%2Fwww.facebook.com%2Frenad.amr.296058%2Fvideos%2F704142829088865%2F&show_text=false&width=350&t=0"
-                            width="100%" height="200" style="border:none;" frameborder="0">
-                        </iframe>
-                    </div>
-                    <div class="project-content">
-                        <h5 class="project-title">Icy Tower - Advanced Game Engine</h5>
-                        <p class="project-description">
-                            A sophisticated 2D platformer game built from scratch using C++ and SFML. Features
-                            advanced physics engine, dynamic level generation, particle systems, and optimized
-                            rendering pipeline. Demonstrates strong software architecture and performance optimization
-                            skills.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">C++</span>
-                            <span class="project-tag">SFML</span>
-                            <span class="project-tag">Game Engine</span>
-                            <span class="project-tag">Physics</span>
-                            <span class="project-tag">Graphics</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/renad29amr/ICYTOWER_SP" target="_blank" class="project-link">
-                                <i class="fab fa-github me-1"></i>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
 
-                <!-- Smart Vending Machine -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop"
-                            alt="IoT Vending Machine" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <h5 class="project-title">Smart IoT Vending Machine</h5>
-                        <p class="project-description">
-                            Complete IoT solution featuring Arduino-based hardware control, real-time inventory
-                            tracking, payment processing integration, and cloud-based analytics dashboard.
-                            Includes mobile app for remote monitoring and predictive maintenance alerts.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">IoT</span>
-                            <span class="project-tag">Arduino</span>
-                            <span class="project-tag">C++</span>
-                        </div>
-                    </div>
+          <!-- Data Engineering -->
+          <div class="carousel-item active">
+            <div class="skill-category fade-in">
+              <div class="d-flex align-items-center mb-4">
+                <i class="fas fa-database data-flow-icon"></i>
+                <h4 class="mb-0">Data Engineering</h4>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Python (Pandas, NumPy)</span>
+                  <span class="skill-level">Expert • 95%</span>
                 </div>
-                <!-- Recipe Management Platform -->
-                <div class="project-card fade-in">
-                    <div class="project-image-container">
-                        <img src="images/welcome.png" alt="Recipe Management Platform" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <h5 class="project-title">Food Recipe Website</h5>
-                        <p class="project-description">
-                            Modern web application with responsive design, user authentication, advanced search
-                            functionality,
-                            and nutritional analysis integration. Features RESTful API, database optimization, and
-                            progressive web app capabilities for offline usage.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">Css</span>
-                            <span class="project-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/renad29amr/delishio" target="_blank" class="project-link">
-                                <i class="fab fa-github me-1"></i>Source Code
-                            </a>
-                            <a href="https://renad29amr.github.io/delishio/" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt me-1"></i>Live Demo
-                            </a>
-                        </div>
-                    </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95"></div>
                 </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>SQL & Database Design</span>
+                  <span class="skill-level">Advanced • 90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>ETL/ELT Pipeline Development</span>
+                  <span class="skill-level">Advanced • 88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="88"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Apache Spark & Big Data</span>
+                  <span class="skill-level">Proficient • 75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="75"></div>
+                </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
-        <div class="container">
-            <h2 class="section-title fade-in">
-                <i class="fas fa-briefcase analytics-icon"></i>
-                Professional Journey
-            </h2>
-            <div class="timeline">
-                <!-- Current Position -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-marker"></div>
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div>
-                                <h5 class="mb-2">Data Engineer Trainee</h5>
-                                <p class="text-gradient mb-0 fw-bold">Digital Egypt Pioneers Initiative (DEPI)</p>
-                            </div>
-                            <span class="badge bg-gradient-primary px-3 py-2">Current Position</span>
-                        </div>
-                        <p class="mb-3 text-muted">
-                            <i class="fas fa-calendar-alt me-2"></i>2025 - Present
-                        </p>
-                        <p class="mb-3">
-                            Developing advanced expertise in Python programming, data pipeline architecture, and
-                            automated data processing systems. Working with SQL data warehouses, implementing ETL
-                            processes, and contributing to real-world data engineering projects with focus on
-                            scalability and performance optimization.
-                        </p>
-                        <div class="row g-2">
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Python Development</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Data Pipeline Design</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">SQL Optimization</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">ETL Processes</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Cloud Integration</small>
-                            </div>
-                        </div>
-                    </div>
+          <!-- IoT -->
+          <div class="carousel-item">
+            <div class="skill-category fade-in">
+              <div class="d-flex align-items-center mb-4">
+                <i class="fas fa-microchip iot-icon"></i>
+                <h4 class="mb-0">IoT & Hardware</h4>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Arduino & Raspberry Pi</span>
+                  <span class="skill-level">Expert • 92%</span>
                 </div>
-
-                <!-- IoT YouTube Instructor -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-marker"></div>
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div>
-                                <h5 class="mb-2">IoT YouTube Instructor and Supporter</h5>
-                                <p class="text-gradient mb-0 fw-bold">RoboTech - ASU | Egypt</p>
-                            </div>
-                            <span class="badge bg-gradient-primary px-3 py-2">Jul 2025 - Present</span>
-                        </div>
-                        <p class="mb-3">
-                            Delivered engaging educational content on IoT concepts through YouTube tutorials. Supported
-                            students by explaining hardware setups, troubleshooting code, and guiding project
-                            development using
-                            Arduino and sensors.
-                        </p>
-                        <div class="row g-2">
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">YouTube Content Creation</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">IoT Education</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Arduino Programming</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Student Mentoring</small>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="92"></div>
                 </div>
-
-                <!-- IoT Developer -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-marker"></div>
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div>
-                                <h5 class="mb-2">IoT Developer</h5>
-                                <p class="text-gradient mb-0 fw-bold">RoboTech - ASU | Egypt</p>
-                            </div>
-                            <span class="badge bg-gradient-accent px-3 py-2">Feb 2025 - Jul 2025</span>
-                        </div>
-                        <p class="mb-3">
-                            Active member of a student-led organization focused on robotics, embedded systems, and smart
-                            technologies. Contributed to innovative IoT solutions and hands-on learning experiences.
-                        </p>
-                        <ul class="mb-3" style="list-style: none; padding-left: 0;">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Active member of a
-                                student-led organization focused on robotics, embedded systems, and smart technologies.
-                            </li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Participated in
-                                IoT-based hardware projects, tech competitions, and hands-on workshops.</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Built Arduino-based
-                                systems, working with sensors, actuators, and basic circuit design.</li>
-                        </ul>
-                        <div class="row g-2">
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">IoT Development</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Arduino Systems</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Circuit Design</small>
-                            </div>
-                            <div class="col-auto">
-                                <small class="badge bg-light text-dark">Tech Competitions</small>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>C/C++ for Embedded Systems</span>
+                  <span class="skill-level">Advanced • 88%</span>
                 </div>
-
-                <!-- Certifications & Training -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-marker"></div>
-                        <div class="mb-4">
-                            <h5 class="mb-3">
-                                <i class="fas fa-certificate me-2 text-gradient"></i>
-                                Professional Development & Certifications
-                            </h5>
-                        </div>
-
-                        <div class="row g-4">
-                            <!-- IoT Workshop -->
-                            <div class="col-md-6">
-                                <div class="card border-0 shadow-sm h-100">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-wifi fa-3x text-gradient-iot mb-3"></i>
-                                        <h6 class="card-title">Advanced IoT Systems Workshop</h6>
-                                        <p class="card-text text-muted small">RoboTech Club, Ain Shams University</p>
-                                        <span class="badge bg-success">August 2025</span>
-                                        <div class="mt-2">
-                                            <small class="text-muted">Embedded Systems • Arduino • Sensor
-                                                Integration</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Game Development -->
-                            <div class="col-md-6">
-                                <div class="card border-0 shadow-sm h-100">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-gamepad fa-3x text-gradient mb-3"></i>
-                                        <h6 class="card-title">Game Development Workshop</h6>
-                                        <p class="card-text text-muted small">MSP Tech Club, Ain Shams University</p>
-                                        <span class="badge bg-primary">February 2025</span>
-                                        <div class="mt-2">
-                                            <small class="text-muted">C++ • SFML </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Digital Egypt Cubs -->
-                            <div class="col-md-6">
-                                <div class="card border-0 shadow-sm h-100">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-trophy fa-3x text-gradient-iot mb-3"></i>
-                                        <h6 class="card-title">Digital Egypt Cubs Program</h6>
-                                        <p class="card-text text-muted small">Ministry of Communications & IT</p>
-                                        <span class="badge bg-warning">Level 2 - October 2022</span>
-                                        <div class="mt-2">
-                                            <small class="text-muted">Digital Skills • Programming Fundamentals</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="88"></div>
                 </div>
-
-                <!-- Key Achievements -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-marker"></div>
-                        <div class="mb-4">
-                            <h5 class="mb-3">
-                                <i class="fas fa-star me-2 text-gradient"></i>
-                                Key Achievements & Recognition
-                            </h5>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-shrink-0">
-                                        <i class="fas fa-medal text-warning fa-lg me-3 mt-1"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Academic Excellence Award</h6>
-                                        <p class="mb-1 small text-muted">
-                                            Maintained GPA of 3.604/4.0 while balancing intensive technical training and
-                                            practical project development.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-shrink-0">
-                                        <i class="fas fa-users text-primary fa-lg me-3 mt-1"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">IoT Education Leadership</h6>
-                                        <p class="mb-1 small text-muted">
-                                            Mentored junior students in IoT development, leading workshops on Arduino
-                                            programming and embedded systems design.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <div class="d-flex align-items-start">
-                                    <div class="flex-shrink-0">
-                                        <i class="fas fa-code text-success fa-lg me-3 mt-1"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Open Source Contributions</h6>
-                                        <p class="mb-1 small text-muted">
-                                            Active contributor to data engineering and IoT projects on GitHub with
-                                            multiple repositories showcasing production-ready solutions.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Sensor Integration & Protocols</span>
+                  <span class="skill-level">Advanced • 85%</span>
                 </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>MQTT & IoT Communication</span>
+                  <span class="skill-level">Proficient • 80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="80"></div>
+                </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section section">
-        <div class="container">
-            <h2 class="section-title fade-in text-white">
-                <i class="fas fa-handshake analytics-icon"></i>
-                Let's Build Something Amazing Together
-            </h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-6">
-                    <div class="contact-card fade-in">
-                        <h4 class="mb-4 text-center">
-                            <i class="fas fa-address-card me-2 text-gradient"></i>
-                            Professional Contact
-                        </h4>
-                        <div class="contact-info">
-                            <div
-                                class="d-flex align-items-center mb-4 pb-4 border-bottom border-secondary border-opacity-25">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-envelope fa-lg text-gradient me-3"></i>
-                                </div>
-                                <div>
-                                    <strong>Email</strong>
-                                    <br><a href="mailto:renadamr.bls@gmail.com" class="text-white text-decoration-none">
-                                        renadamr.bls@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div
-                                class="d-flex align-items-center mb-4 pb-4 border-bottom border-secondary border-opacity-25">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt fa-lg text-gradient me-3"></i>
-                                </div>
-                                <div>
-                                    <strong>Location</strong>
-                                    <br><span class="text-white">Cairo, Egypt</span>
-                                    <br><small class="text-light opacity-75">Available for remote work worldwide</small>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-briefcase fa-lg text-gradient me-3"></i>
-                                </div>
-                                <div>
-                                    <strong>Availability</strong>
-                                    <br><span class="text-white">Open to opportunities</span>
-                                    <br><small class="text-light opacity-75">Data Engineering • IoT Developer •
-                                        Mentoring</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="mailto:renadamr.bls@gmail.com" class="social-link" title="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/renad-amr" target="_blank" class="social-link"
-                                title="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/renad29amr" target="_blank" class="social-link" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <!-- Core Technical Skills -->
+          <div class="carousel-item">
+            <div class="skill-category fade-in">
+              <div class="d-flex align-items-center mb-4">
+                <i class="fas fa-laptop-code code-icon"></i>
+                <h4 class="mb-0">Core Technical Skills</h4>
+              </div>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check-circle text-success me-2"></i>C++, Python, Java</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i>Object-Oriented Programming
+                  (OOP)</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i>SFML (Game Development)</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i>Embedded C & Microcontrollers
+                </li>
+                <li><i class="fas fa-check-circle text-success me-2"></i>Big Data Analytics</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i>SQL & Databases</li>
+              </ul>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#home" class="footer-link">Home</a>
-                    <a href="#about" class="footer-link">About</a>
-                    <a href="#education" class="footer-link">Education</a>
-                    <a href="#skills" class="footer-link">Skills</a>
-                    <a href="#projects" class="footer-link">Projects</a>
+          <!-- Soft Skills -->
+          <div class="carousel-item">
+            <div class="skill-category fade-in">
+              <div class="d-flex align-items-center mb-4">
+                <i class="fas fa-users analytics-icon"></i>
+                <h4 class="mb-0">Soft Skills</h4>
+              </div>
+              <div class="row g-3">
+                <div class="col-auto"><span class="badge bg-gradient-primary">Problem Solving</span>
                 </div>
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-md-start text-center">
-                        <p class="mb-2">
-                            © <span id="currentYear"></span> Renad Amr. All rights reserved.
-                        </p>
-                    </div>
+                <div class="col-auto"><span class="badge bg-gradient-primary">Critical Thinking</span>
                 </div>
+                <div class="col-auto"><span class="badge bg-gradient-primary">Team Leadership</span>
+                </div>
+                <div class="col-auto"><span class="badge bg-gradient-primary">Creativity</span></div>
+                <div class="col-auto"><span class="badge bg-gradient-primary">Effective
+                    Communication</span></div>
+              </div>
             </div>
+          </div>
+
         </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
 
-    <script src="script.js"></script>
+        <!-- Indicators -->
+        <div class="carousel-indicators mt-5">
+          <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#skillsCarousel" data-bs-slide-to="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">
+        <i class="fas fa-project-diagram analytics-icon"></i>
+        Featured Projects
+      </h2>
+      <div class="projects-grid">
+        <!-- Amazon Dashboard Project -->
+        <div class="project-card fade-in">
+          <div class="project-image-container">
+            <img src="images/amazon.png"
+              alt="Amazon Dashboard" class="project-image">
+          </div>
+          <div class="project-content">
+            <h5 class="project-title">Amazon Product Analytics Dashboard</h5>
+            <p class="project-description">
+              Interactive data visualization dashboard for Amazon product analysis featuring advanced filtering
+              capabilities,
+              category-based insights, and real-time price tracking. Built with modern web technologies to provide
+              comprehensive product analytics and market trend visualization.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Plotly</span>
+              <span class="project-tag">Data Visualization</span>
+              <span class="project-tag">Analytics</span>
+              <span class="project-tag">Dashboard</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/renad29amr/Amazon_Dashboard" target="_blank" class="project-link">
+                <i class="fab fa-github me-1"></i>Source Code
+              </a>
+              <a href="https://amazondashboard2025.streamlit.app/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt me-1"></i>Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Titanic Dashboard Project -->
+        <div class="project-card fade-in">
+          <div class="project-image-container">
+            <img src="images/titanic.png"
+              alt="Titanic Dashboard" class="project-image">
+          </div>
+          <div class="project-content">
+            <h5 class="project-title">Titanic Interactive Dashboard</h5>
+            <p class="project-description">
+              Comprehensive data analysis dashboard for the famous Titanic dataset featuring interactive visualizations,
+              survival rate analysis, and correlation heatmaps. Demonstrates advanced data engineering skills with
+              statistical analysis and interactive chart implementations.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Plotly</span>
+              <span class="project-tag">Data Analysis</span>
+              <span class="project-tag">Statistics</span>
+              <span class="project-tag">Heatmap</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/renad29amr/titanic-dashboard" target="_blank" class="project-link">
+                <i class="fab fa-github me-1"></i>Source Code
+              </a>
+              <a href="https://huggingface.co/spaces/renadamr/Titanic_Dashboard" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt me-1"></i>Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Icy Tower Game Project -->
+        <div class="project-card fade-in">
+          <div class="video-container">
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=200&href=https%3A%2F%2Fwww.facebook.com%2Frenad.amr.296058%2Fvideos%2F704142829088865%2F&show_text=false&width=350&t=0"
+              width="100%" height="200" style="border:none;" frameborder="0">
+            </iframe>
+          </div>
+          <div class="project-content">
+            <h5 class="project-title">Icy Tower - Advanced Game Engine</h5>
+            <p class="project-description">
+              A sophisticated 2D platformer game built from scratch using C++ and SFML. Features
+              advanced physics engine, dynamic level generation, particle systems, and optimized
+              rendering pipeline. Demonstrates strong software architecture and performance optimization
+              skills.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">C++</span>
+              <span class="project-tag">SFML</span>
+              <span class="project-tag">Game Engine</span>
+              <span class="project-tag">Physics</span>
+              <span class="project-tag">Graphics</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/renad29amr/ICYTOWER_SP" target="_blank" class="project-link">
+                <i class="fab fa-github me-1"></i>Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Vending Machine -->
+        <div class="project-card fade-in">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop"
+              alt="IoT Vending Machine" class="project-image">
+          </div>
+          <div class="project-content">
+            <h5 class="project-title">Smart IoT Vending Machine</h5>
+            <p class="project-description">
+              Complete IoT solution featuring Arduino-based hardware control, real-time inventory
+              tracking, payment processing integration, and cloud-based analytics dashboard.
+              Includes mobile app for remote monitoring and predictive maintenance alerts.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">IoT</span>
+              <span class="project-tag">Arduino</span>
+              <span class="project-tag">C++</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipe Management Platform -->
+        <div class="project-card fade-in">
+          <div class="project-image-container">
+            <img src="images/welcome.png" alt="Recipe Management Platform" class="project-image">
+          </div>
+          <div class="project-content">
+            <h5 class="project-title">Food Recipe Website</h5>
+            <p class="project-description">
+              Modern web application with responsive design, user authentication, advanced search
+              functionality,
+              and nutritional analysis integration. Features RESTful API, database optimization, and
+              progressive web app capabilities for offline usage.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">Css</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/renad29amr/delishio" target="_blank" class="project-link">
+                <i class="fab fa-github me-1"></i>Source Code
+              </a>
+              <a href="https://renad29amr.github.io/delishio/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt me-1"></i>Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience" class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div class="container">
+      <h2 class="section-title fade-in">
+        <i class="fas fa-briefcase analytics-icon"></i>
+        Professional Journey
+      </h2>
+      <div class="timeline">
+        <!-- Current Position -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="mb-2">Data Engineer Trainee</h5>
+                <p class="text-gradient mb-0 fw-bold">Digital Egypt Pioneers Initiative (DEPI)</p>
+              </div>
+              <span class="badge bg-gradient-primary px-3 py-2">Current Position</span>
+            </div>
+            <p class="mb-3 text-muted">
+              <i class="fas fa-calendar-alt me-2"></i>2025 - Present
+            </p>
+            <p class="mb-3">
+              Developing advanced expertise in Python programming, data pipeline architecture, and
+              automated data processing systems. Working with SQL data warehouses, implementing ETL
+              processes, and contributing to real-world data engineering projects with focus on
+              scalability and performance optimization.
+            </p>
+            <div class="row g-2">
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Python Development</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Data Pipeline Design</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">SQL Optimization</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">ETL Processes</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Cloud Integration</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IoT YouTube Instructor -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="mb-2">IoT YouTube Instructor and Supporter</h5>
+                <p class="text-gradient mb-0 fw-bold">RoboTech - ASU | Egypt</p>
+              </div>
+              <span class="badge bg-gradient-primary px-3 py-2">Jul 2025 - Present</span>
+            </div>
+            <p class="mb-3">
+              Delivered engaging educational content on IoT concepts through YouTube tutorials. Supported
+              students by explaining hardware setups, troubleshooting code, and guiding project
+              development using
+              Arduino and sensors.
+            </p>
+            <div class="row g-2">
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">YouTube Content Creation</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">IoT Education</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Arduino Programming</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Student Mentoring</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IoT Developer -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="mb-2">IoT Developer</h5>
+                <p class="text-gradient mb-0 fw-bold">RoboTech - ASU | Egypt</p>
+              </div>
+              <span class="badge bg-gradient-accent px-3 py-2">Feb 2025 - Jul 2025</span>
+            </div>
+            <p class="mb-3">
+              Active member of a student-led organization focused on robotics, embedded systems, and smart
+              technologies. Contributed to innovative IoT solutions and hands-on learning experiences.
+            </p>
+            <ul class="mb-3" style="list-style: none; padding-left: 0;">
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Active member of a
+                student-led organization focused on robotics, embedded systems, and smart technologies.
+              </li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Participated in
+                IoT-based hardware projects, tech competitions, and hands-on workshops.</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Built Arduino-based
+                systems, working with sensors, actuators, and basic circuit design.</li>
+            </ul>
+            <div class="row g-2">
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">IoT Development</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Arduino Systems</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Circuit Design</small>
+              </div>
+              <div class="col-auto">
+                <small class="badge bg-light text-dark">Tech Competitions</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications & Training -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="mb-4">
+              <h5 class="mb-3">
+                <i class="fas fa-certificate me-2 text-gradient"></i>
+                Professional Development & Certifications
+              </h5>
+            </div>
+
+            <div class="row g-4">
+              <!-- IoT Workshop -->
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body text-center">
+                    <i class="fas fa-wifi fa-3x text-gradient-iot mb-3"></i>
+                    <h6 class="card-title">Advanced IoT Systems Workshop</h6>
+                    <p class="card-text text-muted small">RoboTech Club, Ain Shams University</p>
+                    <span class="badge bg-success">August 2025</span>
+                    <div class="mt-2">
+                      <small class="text-muted">Embedded Systems • Arduino • Sensor
+                        Integration</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Game Development -->
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body text-center">
+                    <i class="fas fa-gamepad fa-3x text-gradient mb-3"></i>
+                    <h6 class="card-title">Game Development Workshop</h6>
+                    <p class="card-text text-muted small">MSP Tech Club, Ain Shams University</p>
+                    <span class="badge bg-primary">February 2025</span>
+                    <div class="mt-2">
+                      <small class="text-muted">C++ • SFML </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Digital Egypt Cubs -->
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body text-center">
+                    <i class="fas fa-trophy fa-3x text-gradient-iot mb-3"></i>
+                    <h6 class="card-title">Digital Egypt Cubs Program</h6>
+                    <p class="card-text text-muted small">Ministry of Communications & IT</p>
+                    <span class="badge bg-warning">Level 2 - October 2022</span>
+                    <div class="mt-2">
+                      <small class="text-muted">Digital Skills • Programming Fundamentals</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-marker"></div>
+            <div class="mb-4">
+              <h5 class="mb-3">
+                <i class="fas fa-star me-2 text-gradient"></i>
+                Key Achievements & Recognition
+              </h5>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <i class="fas fa-medal text-warning fa-lg me-3 mt-1"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Academic Excellence Award</h6>
+                    <p class="mb-1 small text-muted">
+                      Maintained GPA of 3.604/4.0 while balancing intensive technical training and
+                      practical project development.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <i class="fas fa-users text-primary fa-lg me-3 mt-1"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">IoT Education Leadership</h6>
+                    <p class="mb-1 small text-muted">
+                      Mentored junior students in IoT development, leading workshops on Arduino
+                      programming and embedded systems design.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <div class="flex-shrink-0">
+                    <i class="fas fa-code text-success fa-lg me-3 mt-1"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Open Source Contributions</h6>
+                    <p class="mb-1 small text-muted">
+                      Active contributor to data engineering and IoT projects on GitHub with
+                      multiple repositories showcasing production-ready solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <h2 class="section-title fade-in text-white">
+        <i class="fas fa-handshake analytics-icon"></i>
+        Let's Build Something Amazing Together
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <div class="contact-card fade-in">
+            <h4 class="mb-4 text-center">
+              <i class="fas fa-address-card me-2 text-gradient"></i>
+              Professional Contact
+            </h4>
+            <div class="contact-info">
+              <div class="d-flex align-items-center mb-4 pb-4 border-bottom border-secondary border-opacity-25">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-envelope fa-lg text-gradient me-3"></i>
+                </div>
+                <div>
+                  <strong>Email</strong>
+                  <br><a href="mailto:renadamr.bls@gmail.com" class="text-white text-decoration-none">
+                    renadamr.bls@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4 pb-4 border-bottom border-secondary border-opacity-25">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-map-marker-alt fa-lg text-gradient me-3"></i>
+                </div>
+                <div>
+                  <strong>Location</strong>
+                  <br><span class="text-white">Cairo, Egypt</span>
+                  <br><small class="text-light opacity-75">Available for remote work worldwide</small>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-briefcase fa-lg text-gradient me-3"></i>
+                </div>
+                <div>
+                  <strong>Availability</strong>
+                  <br><span class="text-white">Open to opportunities</span>
+                  <br><small class="text-light opacity-75">Data Engineering • IoT Developer •
+                    Mentoring</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="mailto:renadamr.bls@gmail.com" class="social-link" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://linkedin.com/in/renad-amr" target="_blank" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/renad29amr" target="_blank" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#education" class="footer-link">Education</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#projects" class="footer-link">Projects</a>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6 text-md-start text-center">
+            <p class="mb-2">
+              © <span id="currentYear"></span> Renad Amr. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
-
